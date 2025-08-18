@@ -40,4 +40,3 @@ echo $TotalMatchingLines
 
 echo "The number of files are $TotalFilesinDirector and the number of matching lines are $TotalMatchingLines"
 ######################################################################################################
-echo "---End--finder.sh---"
