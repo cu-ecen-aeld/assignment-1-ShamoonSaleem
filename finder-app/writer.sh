@@ -1,6 +1,6 @@
 #!/bin/sh
 # Script for assignment 1
-# Author: Shamoon Saleem
+# Author: Muhammad Shamoon Saleem
 
 writefile=$1
 writestr=$2
