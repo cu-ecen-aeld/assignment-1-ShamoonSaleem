@@ -1,13 +1,13 @@
 #!/bin/sh
 # Script for assignment 1
-# Author: Shamoon Saleem
+# Author: Muhammad Shamoon Saleem
+
 
 filesdir=$1
 searchstr=$2
 
 echo $filesdir
 echo $searchstr
-
 echo "You provided $# arguments."
 ####################################################################################################
 # Exit if not enough or too many arguments
@@ -19,7 +19,6 @@ elif [ $# -gt 2 ]; then
 	exit 1
 fi
 #####################################################################################################
-echo
 if [ -f "$1" ] || [ -d "$1" ];then
     echo "The First argument is a file or directory"
 else
@@ -28,20 +27,17 @@ else
 fi
 #####################################################################################################
 #Counting files under given directory
-echo
 echo "Files in directory and sub directories are "
 TotalFilesinDirector=$(find $filesdir -type f | wc -l)
 echo $TotalFilesinDirector
 #####################################################################################################
-echo "Matching lines"
-
-echo ${filesdir} | grep -r "$searchstr"
+echo "Matching lines list"
+echo $(grep -r $filesdir -e $searchstr) 
 echo
-##echo ${filesdir} | grep -o "$searchstr"
-
 echo "Total number of matching lines"
-TotalMatchingLines=$(${filesdir} | grep -r "$searchstr" * | wc -l)
+TotalMatchingLines=$(grep -r $filesdir -e "$searchstr" | wc -l)
 echo $TotalMatchingLines
 
-echo "The number of files in directory are $TotalFilesinDirector and the number of matching lines are $TotalMatchingLines "
+echo "The number of files are $TotalFilesinDirector and the number of matching lines are $TotalMatchingLines"
 ######################################################################################################
+echo "---End--finder.sh---"
